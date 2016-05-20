@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include "Wizard.h"
+#include "Thief.h"
+#include "Warrior.h"
 using namespace std;
 
 /*
@@ -80,13 +82,36 @@ void classSelection() {
     cout << "You answer: ";
     cin >> playerClassChoice;
     if(playerClassChoice == "Warrior" || playerClassChoice == "warrior") {
-        cout << "fgt" << endl;
+        cout << "A warrior specializes in a high constitution, low charisma, medium defence, and strong physical attacks." << endl;
+        cout << "Are you sure you want to become a Warrior?" << endl;
+        cin >> confirmAction;
+           if(confirmAction == 'Y') {
+             Warrior player1;
+           }
+           if(confirmAction == 'N') {
+             classSelection();
+           }
     }
     if (playerClassChoice == "Wizard" || playerClassChoice == "wizard") {
-        cout << "fgt" << endl;
+        cout << "A wizard specializes in a low constitution, medium charisma, low defence, and very strong magical attacks." << endl;
+        cout << "Are you sure you want to become a Wizard?" << endl;
+        cin >> confirmAction;
+          if(confirmAction == 'Y') {
+            Wizard player1;
+          }
+          if(confirmAction == 'N') {
+            classSelection();
+          }
     }
     if (playerClassChoice == "Thief" || playerClassChoice == "thief") {
-        cout << "fgt" << endl;
+        cout << "A thief specializes in a medium constitution, high charisma, low defence, and weak physical attacks." << endl;
+        cout << "Are you sure you want to become a Thief?" << endl;
+        cin >> confirmAction;
+          if(confirmAction == 'Y') {
+            Thief player1;
+          }
+          if(confirmAction == 'N') {
+            classSelection();
+          }
     }
 }
-
