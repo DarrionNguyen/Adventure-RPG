@@ -13,10 +13,15 @@
 
 #ifndef WARRIOR_H
 #define WARRIOR_H
-
+#include <string>
+using namespace std;
 class Warrior {
 public:
-    Warrior();
+    Warrior(string gameName);
+    void setName(string gameName);
+   
+private:
+    string name;
 };
 
 

@@ -15,11 +15,12 @@ char confirmAction;
 /*
  Listing the player-related variables
  */
-string playerName; 
+extern string playerName = "bob"; 
 string playerGender;
 string playerClassChoice;
 int playerLevel = 1;
 int playerAge;
+extern bool playerHasChosenClass = false;
 
 /*
  Listing the game functions
@@ -27,6 +28,7 @@ int playerAge;
 void playerInfo();
 void classSelection();
 void game1();
+extern string gameName;
 
 /*
  Actual code starts here
@@ -86,7 +88,7 @@ void classSelection() {
         cout << "Are you sure you want to become a Warrior?" << endl;
         cin >> confirmAction;
            if(confirmAction == 'Y') {
-             Warrior player1;
+             Warrior player1(playerName);
            }
            if(confirmAction == 'N') {
              classSelection();
@@ -97,7 +99,7 @@ void classSelection() {
         cout << "Are you sure you want to become a Wizard?" << endl;
         cin >> confirmAction;
           if(confirmAction == 'Y') {
-            Wizard player1;
+            Wizard player1(playerName);
           }
           if(confirmAction == 'N') {
             classSelection();
@@ -108,10 +110,24 @@ void classSelection() {
         cout << "Are you sure you want to become a Thief?" << endl;
         cin >> confirmAction;
           if(confirmAction == 'Y') {
-            Thief player1;
+            Thief player1(playerName);
           }
           if(confirmAction == 'N') {
             classSelection();
           }
+    }
+    game1();
+}
+
+void game1() {
+    cout << "As you leave the store, you meet a hot waitress." << endl;
+    cout << "Attempt to recruit her into your party?" << endl;
+    cin >> confirmAction;
+    if(confirmAction == 'Y') {
+        Warrior player2("Hot Waitress");
+    
+    }
+    if(confirmAction == 'N') {
+        cout << "What are you? Gay or something?" << endl;
     }
 }

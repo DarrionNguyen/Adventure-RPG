@@ -5,7 +5,24 @@
  */
 #include "Wizard.h"
 #include <iostream>
+#include <string>
 using namespace std;
-Wizard::Wizard() {
-    cout << "You have become a wizard!" << endl;
+extern string name;
+extern bool playerHasChosenClass;
+extern string playerName;
+
+Wizard::Wizard(string gameName) {
+    if(playerHasChosenClass == false)
+    {
+        cout << playerName << " has become a Wizard!" << endl;
+        playerHasChosenClass = true;
+    }
+    else if(playerHasChosenClass == true){
+    name = gameName;
+    cout << name << ", the Wizard, has joined your party!" << endl;
+    }
+}
+
+void Wizard::setName(string gameName) {
+    name = gameName;
 }

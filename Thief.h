@@ -13,12 +13,16 @@
 
 #ifndef THIEF_H
 #define THIEF_H
-#include <iostream>
-
+#include <string>
+using namespace std;
 class Thief {
 public:
-    Thief();
+    Thief(string gameName);
+    void setName(string gameName); 
+private:
+    string name;
 };
+
 
 #endif /* THIEF_H */
 
